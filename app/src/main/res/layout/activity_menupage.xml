@@ -1,233 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".FirstPageActivity">
+    android:fillViewport="true">
 
-    <!-- Menu Item 1 (Coffee 1) -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/menuItem1"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp">
+        android:padding="16dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".FirstPageActivity">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Top Menu Bar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/topMenu"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:background="?attr/colorPrimary"
+            android:title="Dashboard"
+            android:titleTextColor="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-            <ImageView
-                android:id="@+id/menuItemImage1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/coffee"
-                android:contentDescription="Coffee 1 Image" />
-
+            <!-- Menu Text -->
             <TextView
-                android:id="@+id/menuItemText1"
+                android:id="@+id/menuText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Coffee 1"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:textColor="@android:color/black"
-                android:gravity="center" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:text="Menu"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:padding="8dp"/>
+        </androidx.appcompat.widget.Toolbar>
 
-    <!-- Menu Item 2 (Coffee 2) -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/menuItem2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/menuItem1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Inventory -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/inventoryCard"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/topMenu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp">
 
-            <ImageView
-                android:id="@+id/menuItemImage2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/coffee"
-                android:contentDescription="Coffee 2 Image" />
-
-            <TextView
-                android:id="@+id/menuItemText2"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Coffee 2"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:textColor="@android:color/black"
-                android:gravity="center" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:orientation="vertical"
+                android:gravity="center">
 
-    <!-- Menu Item 3 (Coffee 3) -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/menuItem3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/menuItem2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp">
+                <ImageView
+                    android:id="@+id/inventoryImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/inventory"
+                    android:contentDescription="Inventory" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/inventoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inventory"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/productCard"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/inventoryCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp">
 
-            <ImageView
-                android:id="@+id/menuItemImage3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/coffee"
-                android:contentDescription="Coffee 3 Image" />
-
-            <TextView
-                android:id="@+id/menuItemText3"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Coffee 3"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:textColor="@android:color/black"
-                android:gravity="center" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:orientation="vertical"
+                android:gravity="center">
 
-    <!-- Menu Item 4 (Coffee 4) -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/menuItem4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/menuItem3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp">
+                <ImageView
+                    android:id="@+id/productImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/products"
+                    android:contentDescription="Product" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/productText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Delivery -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/deliveryCard"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/productCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp">
 
-            <ImageView
-                android:id="@+id/menuItemImage4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/coffee"
-                android:contentDescription="Coffee 4 Image" />
-
-            <TextView
-                android:id="@+id/menuItemText4"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Coffee 4"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:textColor="@android:color/black"
-                android:gravity="center" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:orientation="vertical"
+                android:gravity="center">
 
-    <!-- Menu Item 5 (Coffee 5) -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/menuItem5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/menuItem4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp">
+                <ImageView
+                    android:id="@+id/deliveryImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/delivery"
+                    android:contentDescription="Delivery" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/deliveryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Order -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/orderCard"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/deliveryCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp">
 
-            <ImageView
-                android:id="@+id/menuItemImage5"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/coffee"
-                android:contentDescription="Coffee 5 Image" />
-
-            <TextView
-                android:id="@+id/menuItemText5"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Coffee 5"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:textColor="@android:color/black"
-                android:gravity="center" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:orientation="vertical"
+                android:gravity="center">
 
-    <!-- Menu Item 6 (Coffee 6) -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/menuItem6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/menuItem5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp">
+                <ImageView
+                    android:id="@+id/orderImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/order"
+                    android:contentDescription="Order" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/orderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Logout -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/logoutCard"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/orderCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp">
 
-            <ImageView
-                android:id="@+id/menuItemImage6"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/coffee"
-                android:contentDescription="Coffee 6 Image" />
-
-            <TextView
-                android:id="@+id/menuItemText6"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Coffee 6"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:textColor="@android:color/black"
-                android:gravity="center" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:orientation="vertical"
+                android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/logoutImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logout"
+                    android:contentDescription="Logout" />
+
+                <TextView
+                    android:id="@+id/logoutText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

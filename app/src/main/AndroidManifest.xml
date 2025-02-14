@@ -13,6 +13,21 @@
         android:theme="@style/Theme.KeniKape"
         tools:targetApi="31">
         <activity
+            android:name=".product_item"
+            android:exported="false" />
+        <activity
+            android:name=".inventorypage"
+            android:exported="false" />
+        <activity
+            android:name=".orderpage"
+            android:exported="false" />
+        <activity
+            android:name=".deliverypage"
+            android:exported="false" />
+        <activity
+            android:name=".productpage"
+            android:exported="false" />
+        <activity
             android:name=".menupage"
             android:exported="false" />
         <activity

@@ -1,24 +1,55 @@
 package com.example.kenikape;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class menupage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_menupage);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        // Set click listeners for the cards
+        findViewById(R.id.inventoryCard).setOnClickListener(v -> {
+            startActivity(new Intent(menupage.this, inventorypage.class));
         });
+
+        findViewById(R.id.deliveryCard).setOnClickListener(v -> {
+            startActivity(new Intent(menupage.this, deliverypage.class));
+        });
+
+        findViewById(R.id.orderCard).setOnClickListener(v -> {
+            startActivity(new Intent(menupage.this, orderpage.class));
+        });
+
+
+        findViewById(R.id.productCard).setOnClickListener(v -> {
+            startActivity(new Intent(menupage.this, productpage.class));
+        });
+
+
+        findViewById(R.id.logoutCard).setOnClickListener(v -> {
+            showLogoutConfirmationDialog();
+        });
+
+    }
+
+    private void showLogoutConfirmationDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to log out?")
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    // Close the activity (Logout)
+                    finish();
+                })
+                .setNegativeButton("No", (dialog, which) -> {
+                    dialog.dismiss(); // Close the dialog if No is clicked
+                })
+                .setCancelable(false) // Prevent closing dialog by clicking outside
+                .show();
     }
 }
