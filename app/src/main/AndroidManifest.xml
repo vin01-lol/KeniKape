@@ -13,6 +13,42 @@
         android:theme="@style/Theme.KeniKape"
         tools:targetApi="31">
         <activity
+            android:name=".CartAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cartitem"
+            android:exported="false" />
+        <activity
+            android:name=".addtocart"
+            android:exported="false" />
+        <activity
+            android:name=".espresso"
+            android:exported="false" />
+        <activity
+            android:name=".macchiato"
+            android:exported="false" />
+        <activity
+            android:name=".cappuccino$americano"
+            android:exported="false" />
+        <activity
+            android:name=".mocha"
+            android:exported="false" />
+        <activity
+            android:name=".cappuccino"
+            android:exported="false" />
+        <activity
+            android:name=".latte"
+            android:exported="false" />
+        <activity
+            android:name=".cappuccino$espresso"
+            android:exported="false" />
+        <activity
+            android:name=".productpage"
+            android:exported="false" />
+        <activity
             android:name=".product_item"
             android:exported="false" />
         <activity
@@ -23,9 +59,6 @@
             android:exported="false" />
         <activity
             android:name=".deliverypage"
-            android:exported="false" />
-        <activity
-            android:name=".productpage"
             android:exported="false" />
         <activity
             android:name=".menupage"

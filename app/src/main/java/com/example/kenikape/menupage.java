@@ -28,8 +28,10 @@ public class menupage extends AppCompatActivity {
 
 
         findViewById(R.id.productCard).setOnClickListener(v -> {
-            startActivity(new Intent(menupage.this, productpage.class));
+            Intent intent = new Intent(menupage.this, productpage.class);
+            startActivity(intent);
         });
+
 
 
         findViewById(R.id.logoutCard).setOnClickListener(v -> {
