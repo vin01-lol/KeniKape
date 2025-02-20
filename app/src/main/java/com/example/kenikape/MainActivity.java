@@ -31,6 +31,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
             finish(); // Finish MainActivity so the user can't go back to it
-        }, 5000);
+        }, 3000);
     }
 }

@@ -12,72 +12,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KeniKape"
         tools:targetApi="31">
-        <activity
-            android:name=".confirmpayment"
-            android:exported="false" />
-        <activity
-            android:name=".CartAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".CartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".cartitem"
-            android:exported="false" />
-        <activity
-            android:name=".addtocart"
-            android:exported="false" />
-        <activity
-            android:name=".espresso"
-            android:exported="false" />
-        <activity
-            android:name=".macchiato"
-            android:exported="false" />
-        <activity
-            android:name=".cappuccino$americano"
-            android:exported="false" />
-        <activity
-            android:name=".mocha"
-            android:exported="false" />
-        <activity
-            android:name=".cappuccino"
-            android:exported="false" />
-        <activity
-            android:name=".latte"
-            android:exported="false" />
-        <activity
-            android:name=".cappuccino$espresso"
-            android:exported="false" />
-        <activity
-            android:name=".productpage"
-            android:exported="false" />
-        <activity
-            android:name=".product_item"
-            android:exported="false" />
-        <activity
-            android:name=".inventorypage"
-            android:exported="false" />
-        <activity
-            android:name=".orderpage"
-            android:exported="false" />
-        <activity
-            android:name=".deliverypage"
-            android:exported="false" />
-        <activity
-            android:name=".menupage"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
+
+        <activity android:name=".confirmpayment" android:exported="false" />
+        <activity android:name=".productpage" android:exported="false" />
+        <activity android:name=".inventorypage" android:exported="false" />
+        <activity android:name=".orderpage" android:exported="false" />
+        <activity android:name=".deliverypage" android:exported="false" />
+        <activity android:name=".menupage" android:exported="false" />
+        <activity android:name=".LoginActivity" android:exported="false" />
+
+        <!-- Corrected MainActivity Declaration -->
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.KeniKape"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+
+        </activity> <!-- Properly closed MainActivity -->
+
     </application>
 
 </manifest>
