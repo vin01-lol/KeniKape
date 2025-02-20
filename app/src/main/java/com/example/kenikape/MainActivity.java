@@ -2,7 +2,8 @@ package com.example.kenikape;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.os.Handler;
+import android.widget.ProgressBar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,11 +25,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
 
-    // Method to handle login button click and navigate to LoginActivity
-    public void goToLoginPage(View view) {
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class); // Intent to start LoginActivity
-        startActivity(intent); // Start the LoginActivity
+        // Delay the transition to LoginActivity by 5 seconds
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish(); // Finish MainActivity so the user can't go back to it
+        }, 5000);
     }
 }
